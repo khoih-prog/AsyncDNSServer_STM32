@@ -1,0 +1,40 @@
+{
+  "name":"AsyncDNSServer_STM32",
+  "version": "1.0.0",
+  "description":"Asynchronous DNS Server Library for STM32 using built-in LAN8742A Ethernet",
+  "keywords":"async,dns,dnsserver,server,client,udp,stm32,ethernet",
+  "authors": [
+    {
+      "name": "Develo",
+      "url":   "https://github.com/devyte",
+    }
+    {
+      "name":  "Khoi Hoang",
+      "url":   "https://github.com/khoih-prog",
+      "email": "khoih.prog@gmail.com",
+      "maintainer": true,
+    }  
+  ],
+  "repository":
+  {
+    "type": "git",
+    "url": "https://github.com/khoih-prog/AsyncDNSServer_STM32"
+  },
+  "license": "MIT",
+  "frameworks": "arduino",
+  "platforms": ["stm32"],
+  "dependencies": [
+    {
+      "name": "STM32duino LwIP",
+      "platforms": "stm32"
+    },
+    {
+      "name": "STM32duino STM32Ethernet",
+      "platforms": "stm32"
+    }
+    {
+      "name": "AsyncUDP_STM32",
+      "platforms": "stm32"
+    }
+  ]
+}
