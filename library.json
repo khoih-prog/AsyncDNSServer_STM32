@@ -31,7 +31,7 @@
     {
       "name": "STM32duino STM32Ethernet",
       "platforms": "stm32"
-    }
+    },
     {
       "name": "AsyncUDP_STM32",
       "platforms": "stm32"
