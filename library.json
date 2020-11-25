@@ -25,16 +25,19 @@
   "platforms": ["stm32"],
   "dependencies": [
     {
+      "owner": "stm32duino",
       "name": "STM32duino LwIP",
-      "platforms": "stm32"
+      "version": "^2.1.2"
     },
     {
-      "name": "STM32duino STM32Ethernet",
-      "platforms": "stm32"
-    },
+      "owner": "stm32duino",
+      "name": "STM32Ethernet",
+      "version": "^1.2.0"
+    }
     {
+      "owner": "khoih.prog",
       "name": "AsyncUDP_STM32",
-      "platforms": "stm32"
+      "version": "^1.1.0"
     }
   ]
 }
