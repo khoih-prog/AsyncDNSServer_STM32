@@ -21,9 +21,8 @@
     "url": "https://github.com/khoih-prog/AsyncDNSServer_STM32"
   },
   "license": "MIT",
-  "frameworks": "arduino",
-  "platforms": ["stm32"],
-  "dependencies": [
+  "dependencies": 
+  [
     {
       "owner": "stm32duino",
       "name": "STM32duino LwIP",
@@ -33,11 +32,13 @@
       "owner": "stm32duino",
       "name": "STM32Ethernet",
       "version": "^1.2.0"
-    }
+    },
     {
       "owner": "khoih.prog",
       "name": "AsyncUDP_STM32",
       "version": "^1.1.0"
     }
-  ]
+  ],
+  "frameworks": "arduino",
+  "platforms": ["stm32", "ststm32"]
 }
