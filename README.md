@@ -18,8 +18,8 @@
   * [Why Async is better](#why-async-is-better)
   * [Currently supported Boards](#currently-supported-boards)
 * [Changelog](#changelog)
-  * [Releases v1.2.0](#releases-v120)
-  * [Initial Releases v1.1.0](#initial-releases-v110)
+  * [Releases v1.1.0](#releases-v110)
+  * [Initial Releases v1.0.0](#initial-releases-v100)
 * [Prerequisites](#prerequisites)
 * [Installation](#installation)
   * [Use Arduino Library Manager](#use-arduino-library-manager)
@@ -40,10 +40,10 @@
     * [ 3. AsyncDNServerFull_STM32](examples/AsyncDNServerFull_STM32)
     * [ 4. AsyncDNSServer_STM32](examples/AsyncDNSServer_STM32)
   * [2. For LAN8720](#1-for-lan8720)
-  * [ 5. AsyncCaptivePortalAdvanced_STM32_LAN8720](examples/AsyncCaptivePortalAdvanced_STM32_LAN8720)
-  * [ 6. AsyncCaptivePortal_STM32_LAN8720](examples/AsyncCaptivePortal_STM32_LAN8720)
-  * [ 7. AsyncDNServerFull_STM32_LAN8720](examples/AsyncDNServerFull_STM32_LAN8720)
-  * [ 8. AsyncDNSServer_STM32_LAN8720](examples/AsyncDNSServer_STM32_LAN8720)
+    * [ 5. AsyncCaptivePortalAdvanced_STM32_LAN8720](examples/AsyncCaptivePortalAdvanced_STM32_LAN8720)
+    * [ 6. AsyncCaptivePortal_STM32_LAN8720](examples/AsyncCaptivePortal_STM32_LAN8720)
+    * [ 7. AsyncDNServerFull_STM32_LAN8720](examples/AsyncDNServerFull_STM32_LAN8720)
+    * [ 8. AsyncDNSServer_STM32_LAN8720](examples/AsyncDNSServer_STM32_LAN8720)
 * [Example AsyncDNSServer_STM32](#example-asyncdnsserver_stm32)
   * [1. File AsyncDNSServer_STM32.ino](#1-file-asyncdnsserver_stm32ino)
   * [2. File defines.h](#2-file-definesh) 
@@ -61,7 +61,7 @@
 ---
 ---
 
-### Why do we need this Async [AsyncDNSServer_STM32 library](https://github.com/khoih-prog/AsyncDNSServer_STM32)
+### Why do we need this [AsyncDNSServer_STM32 library](https://github.com/khoih-prog/AsyncDNSServer_STM32)
 
 #### Features
 
@@ -103,7 +103,7 @@ to apply the better and faster **asynchronous** feature of the **powerful** [Asy
 
 ## Changelog
 
-### Releases v1.2.0
+### Releases v1.1.0
 
 1. Add support to **LAN8720** Ethernet for many **STM32F4** (F407xx, NUCLEO_F429ZI) and **STM32F7** (DISCO_F746NG, NUCLEO_F746ZG, NUCLEO_F756ZG) boards.
 2. Add LAN8720 examples
@@ -554,7 +554,7 @@ Sometimes, the library will only work if you update the `STM32` core to the late
 
 ## Releases
 
-### Releases v1.2.0
+### Releases v1.1.0
 
 1. Add support to **LAN8720** Ethernet for many **STM32F4** (F407xx, NUCLEO_F429ZI) and **STM32F7** (DISCO_F746NG, NUCLEO_F746ZG, NUCLEO_F756ZG) boards.
 2. Add LAN8720 examples
