@@ -24,10 +24,10 @@
 #ifndef defines_h
 #define defines_h
 
-#if !( defined(STM32F0) || defined(STM32F1) || defined(STM32F2) || defined(STM32F3)  ||defined(STM32F4) || defined(STM32F7) || \
-       defined(STM32L0) || defined(STM32L1) || defined(STM32L4) || defined(STM32H7)  ||defined(STM32G0) || defined(STM32G4) || \
-       defined(STM32WB) || defined(STM32MP1) )
-  #error This code is designed to run on STM32F/L/H/G/WB/MP1 platform! Please check your Tools->Board setting.
+#if !( defined(ARDUINO_BLACK_F407VE) || defined(ARDUINO_BLACK_F407VG) || defined(ARDUINO_BLACK_F407ZE) || defined(ARDUINO_BLACK_F407ZG)  || \
+       defined(ARDUINO_BLUE_F407VE_Mini) || defined(ARDUINO_DIYMORE_F407VGT) || defined(ARDUINO_FK407M1) || defined(ARDUINO_NUCLEO_F429ZI) || \
+       defined(ARDUINO_DISCO_F746NG) || defined(ARDUINO_NUCLEO_F746ZG) || defined(ARDUINO_NUCLEO_F756ZG) || defined(ARDUINO_NUCLEO_H743ZI) )
+  #error This code is designed to run on some STM32F407XX NUCLEO-F429ZI, STM32F746 and STM32F756 platform! Please check your Tools->Board setting.
 #endif
 
 #define ASYNC_UDP_STM32_DEBUG_PORT      Serial
@@ -36,6 +36,8 @@
 // Use from 0 to 4. Higher number, more debugging messages and memory usage.
 #define _ASYNC_UDP_STM32_LOGLEVEL_      4
 #define _ASYNC_DNS_STM32_LOGLEVEL_      4
+
+#define USING_LAN8720                   true
 
 
 #if defined(STM32F0)

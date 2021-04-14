@@ -1,5 +1,5 @@
 /****************************************************************************************************************************
-  AsyncDNSServer.ino
+  AsyncCaptivePortal_STM32_LAN8720.ino
 
   For STM32 with LAN8720 (STM32F4/F7)or built-in LAN8742A Ethernet (Nucleo-144, DISCOVERY, etc)
   
@@ -23,31 +23,29 @@
 #include <AsyncWebServer_STM32.h>
 
 const byte DNS_PORT = 53;
-
-IPAddress apIP;
+IPAddress apIP(192, 168, 100, 1);
 
 AsyncDNSServer dnsServer;
-
 AsyncWebServer server(80);
+
+String responseHTML = ""
+                      "<!DOCTYPE html><html lang='en'><head>"
+                      "<meta name='viewport' content='width=device-width'>"
+                      "<title>LAN8720-CaptivePortal</title></head><body>"
+                      "<h1>Hello World from LAN8720!</h1><p>This is a captive portal example."
+                      " All requests will be redirected here.</p></body></html>";
 
 void handleNotFound(AsyncWebServerRequest *request)
 {
-  String message = "Hello World from " + String(BOARD_NAME) + "using LAN8742A\n\n";
-  message += "URI: ";
-  message += request->url();
-
-  request->send(200, "text/plain", message);
+  request->send(200, "text/html", responseHTML);
 }
 
-
-void setup()
+void setup() 
 {
   Serial.begin(115200);
-  while (!Serial);
-
-  delay(1000);
-
-  Serial.print("\nStart AsyncDNSServer_STM32 on ");
+  delay(2000);
+  
+  Serial.print("\nStart AsyncCaptivePortal_STM32_LAN8720 on ");
   Serial.println(BOARD_NAME);
   Serial.println(ASYNC_DNS_SERVER_STM32_VERSION);
 
@@ -65,19 +63,21 @@ void setup()
   // modify TTL associated  with the domain name (in seconds)
   // default is 60 seconds
   dnsServer.setTTL(300);
-  // set which return code will be used for all other domains 
-  // (e.g. sending ServerFailure instead of NonExistentDomain will reduce number of queries
-  // sent by clients). Default is AsyncDNSReplyCode::NonExistentDomain
+  // set which return code will be used for all other domains (e.g. sending
+  // ServerFailure instead of NonExistentDomain will reduce number of queries
+  // sent by clients)
+  // default is AsyncDNSReplyCode::NonExistentDomain
   dnsServer.setErrorReplyCode(AsyncDNSReplyCode::ServerFailure);
 
-  // start DNS server for a specific domain name
+  // if DNSServer is started with "*" for domain name, it will reply with
+  // provided IP to all DNS request
   dnsServer.start(DNS_PORT, "*", apIP);
 
   server.onNotFound(handleNotFound);
-
+  
   server.begin();
-
-  Serial.print(F("HTTP EthernetWebServer is @ IP : "));
+  
+  Serial.print(F("HTTP DNSServer is @ IP : "));
   Serial.println(apIP);
 }
 

@@ -1,5 +1,5 @@
 /****************************************************************************************************************************
-  AsyncDNSServer.ino
+  AsyncDNSServer_LAN8720.ino
 
   For STM32 with LAN8720 (STM32F4/F7)or built-in LAN8742A Ethernet (Nucleo-144, DISCOVERY, etc)
   
@@ -32,7 +32,7 @@ AsyncWebServer server(80);
 
 void handleNotFound(AsyncWebServerRequest *request)
 {
-  String message = "Hello World from " + String(BOARD_NAME) + "using LAN8742A\n\n";
+  String message = "Hello World from " + String(BOARD_NAME) + "using LAN8720\n\n";
   message += "URI: ";
   message += request->url();
 
@@ -43,11 +43,9 @@ void handleNotFound(AsyncWebServerRequest *request)
 void setup()
 {
   Serial.begin(115200);
-  while (!Serial);
-
-  delay(1000);
-
-  Serial.print("\nStart AsyncDNSServer_STM32 on ");
+  delay(2000);
+  
+  Serial.print("\nStart AsyncDNSServer_STM32_LAN8720 on ");
   Serial.println(BOARD_NAME);
   Serial.println(ASYNC_DNS_SERVER_STM32_VERSION);
 

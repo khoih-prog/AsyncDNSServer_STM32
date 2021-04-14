@@ -1,21 +1,14 @@
 /****************************************************************************************************************************
   defines.h
   
-  For STM32 with built-in LAN8742A Ethernet (Nucleo-144, DISCOVERY, etc)
-
+  For STM32 with LAN8720 (STM32F4/F7)or built-in LAN8742A Ethernet (Nucleo-144, DISCOVERY, etc)
+  
   AsyncDNSServer_STM32 is a Async DNS Server library for the STM32 using built-in LAN8742A Ethernet
-
-  Based on and modified from ESPAsyncUDP Library (https://github.com/me-no-dev/ESPAsyncUDP)
-  Built by Khoi Hoang https://github.com/khoih-prog/AsyncUDP_STM32
+  
+  Based on and modified from ESPAsyncDNSServer Library (https://github.com/devyte/ESPAsyncDNSServer)
+  Built by Khoi Hoang https://github.com/khoih-prog/AsyncDNSServer_STM32
   Licensed under MIT license
-
-  Version: 1.0.0
-
-  Version Modified By   Date      Comments
-  ------- -----------  ---------- -----------
-  1.0.0   K Hoang      08/09/2020 Initial coding for STM32 for built-in Ethernet (Nucleo-144, DISCOVERY, etc).
  *****************************************************************************************************************************/
-
 /*
    Currently support
    1) STM32 boards with built-in Ethernet (to use USE_BUILTIN_ETHERNET = true) such as :
@@ -23,8 +16,9 @@
       - Discovery (STM32F746G-DISCOVERY)
       - STM32 boards (STM32F/L/H/G/WB/MP1) with 32K+ Flash, with Built-in Ethernet, 
       - See How To Use Built-in Ethernet at (https://github.com/khoih-prog/EthernetWebServer_STM32/issues/1)
-   2) STM32F/L/H/G/WB/MP1 boards (with 32+K Flash) running ENC28J60 shields (to use USE_BUILTIN_ETHERNET = false)
-   3) STM32F/L/H/G/WB/MP1 boards (with 32+K Flash) running W5x00 shields
+   2) STM32F/L/H/G/WB/MP1 boards (with 64+K Flash) running ENC28J60 shields (to use USE_BUILTIN_ETHERNET = false)
+   3) STM32F/L/H/G/WB/MP1 boards (with 64+K Flash) running W5x00 shields
+   4) STM32F4 and STM32F7 boards (with 64+K Flash) running LAN8720 shields
 */
 
 #ifndef defines_h

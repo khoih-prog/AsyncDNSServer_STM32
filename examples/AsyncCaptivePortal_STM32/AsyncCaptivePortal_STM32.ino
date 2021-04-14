@@ -1,19 +1,20 @@
 /****************************************************************************************************************************
   AsyncCaptivePortal_STM32.ino
 
-  For STM32 with built-in LAN8742A Ethernet (Nucleo-144, DISCOVERY, etc)
-
+  For STM32 with LAN8720 (STM32F4/F7)or built-in LAN8742A Ethernet (Nucleo-144, DISCOVERY, etc)
+  
   AsyncDNSServer_STM32 is a Async DNS Server library for the STM32 using built-in LAN8742A Ethernet
-
-  Based on and modified from ESPAsyncUDP Library (https://github.com/me-no-dev/ESPAsyncUDP)
-  Built by Khoi Hoang https://github.com/khoih-prog/AsyncUDP_STM32
+  
+  Based on and modified from ESPAsyncDNSServer Library (https://github.com/devyte/ESPAsyncDNSServer)
+  Built by Khoi Hoang https://github.com/khoih-prog/AsyncDNSServer_STM32
   Licensed under MIT license
-
-  Version: 1.0.0
-
+  
+  Version: 1.1.0
+  
   Version Modified By   Date      Comments
   ------- -----------  ---------- -----------
   1.0.0   K Hoang      08/09/2020 Initial coding for STM32 for built-in Ethernet (Nucleo-144, DISCOVERY, etc).
+  1.1.0   K Hoang      14/04/2021 Add support to LAN8720 using STM32F4 or STM32F7
  *****************************************************************************************************************************/
 
 #include "defines.h"
@@ -30,8 +31,8 @@ AsyncWebServer server(80);
 String responseHTML = ""
                       "<!DOCTYPE html><html lang='en'><head>"
                       "<meta name='viewport' content='width=device-width'>"
-                      "<title>CaptivePortal</title></head><body>"
-                      "<h1>Hello World!</h1><p>This is a captive portal example."
+                      "<title>LAN8742A-CaptivePortal</title></head><body>"
+                      "<h1>Hello World from LAN8742A!</h1><p>This is a captive portal example."
                       " All requests will be redirected here.</p></body></html>";
 
 void handleNotFound(AsyncWebServerRequest *request)
@@ -42,7 +43,13 @@ void handleNotFound(AsyncWebServerRequest *request)
 void setup() 
 {
   Serial.begin(115200);
-  Serial.println("\nStart AsyncCaptivePortal_STM32 on " + String(BOARD_NAME));
+  while (!Serial);
+
+  delay(1000);
+
+  Serial.print("\nStart AsyncCaptivePortal_STM32 on ");
+  Serial.println(BOARD_NAME);
+  Serial.println(ASYNC_DNS_SERVER_STM32_VERSION);
 
   // start the ethernet connection and the server
   // Use random mac

@@ -1,5 +1,5 @@
 /****************************************************************************************************************************
-  AsyncCaptivePortalAdvanced_STM32.ino
+  AsyncCaptivePortalAdvanced_STM32_LAN8720.ino
 
   For STM32 with LAN8720 (STM32F4/F7)or built-in LAN8742A Ethernet (Nucleo-144, DISCOVERY, etc)
   
@@ -83,10 +83,10 @@ void handleRoot(AsyncWebServerRequest * request)
   String Page = F(
                   "<!DOCTYPE html><html lang='en'><head>"
                   "<meta name='viewport' content='width=device-width'>"
-                  "<title>LAN8742A-CaptivePortal</title></head><body>"
+                  "<title>LAN8720-CaptivePortal</title></head><body>"
                   "<h1>HELLO WORLD!!</h1>");
 
-  Page +=   "<h2>From " + String(BOARD_NAME) + " using LAN8742A</h2>";
+  Page +=   "<h2>From " + String(BOARD_NAME) + " using LAN8720</h2>";
 
   AsyncWebServerResponse *response = request->beginResponse(200, "text/html", Page);
   response->addHeader("Cache-Control", "no-cache, no-store, must-revalidate");
@@ -152,11 +152,9 @@ void handleNotFound(AsyncWebServerRequest * request)
 void setup()
 {
   Serial.begin(115200);
-  while (!Serial);
-
-  delay(1000);
-
-  Serial.print("\nStart AsyncCaptivePortalAdvanced_STM32 on ");
+  delay(2000);
+  
+  Serial.print("\nStart AsyncCaptivePortalAdvanced_STM32_LAN8720 on ");
   Serial.println(BOARD_NAME);
   Serial.println(ASYNC_DNS_SERVER_STM32_VERSION);
 
