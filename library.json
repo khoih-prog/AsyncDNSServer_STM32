@@ -1,6 +1,6 @@
 {
   "name":"AsyncDNSServer_STM32",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "description":"Asynchronous DNS Server Library for STM32F/L/H/G/WB/MP1 using LAN8720 or built-in LAN8742A Ethernet",
   "keywords":"async,dnsserver,dns-server,udp,ethernet,LAN8720, LAN8742A, stm32, stm32f, stm32l, stm32h, stm32g, stm32wb, stm32mp1, ST STM32, bluepill, blackpill, f407ve, nucleo, nucleo-144",
   "authors": [
@@ -36,9 +36,9 @@
       "platforms": ["ststm32"]
     },
     {
-      "owner": "khoih.prog",
+      "owner": "khoih-prog",
       "name": "AsyncUDP_STM32",
-      "version": "^1.2.0",
+      "version": "^1.2.1",
       "platforms": ["ststm32"]
     }
   ],

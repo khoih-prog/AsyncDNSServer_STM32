@@ -9,12 +9,13 @@
   Built by Khoi Hoang https://github.com/khoih-prog/AsyncDNSServer_STM32
   Licensed under MIT license
   
-  Version: 1.1.0
+  Version: 1.1.1
   
   Version Modified By   Date      Comments
   ------- -----------  ---------- -----------
   1.0.0   K Hoang      08/09/2020 Initial coding for STM32 for built-in Ethernet (Nucleo-144, DISCOVERY, etc).
   1.1.0   K Hoang      14/04/2021 Add support to LAN8720 using STM32F4 or STM32F7
+  1.1.1   K Hoang      09/10/2021 Update `platform.ini` and `library.json`
   *****************************************************************************************************************************/
 
 #pragma once
@@ -22,7 +23,7 @@
 #ifndef AsyncDNSServer_STM32_h
 #define AsyncDNSServer_STM32_h
 
-#define ASYNC_DNS_SERVER_STM32_VERSION      "AsyncDNSServer_STM32 v1.1.0"
+#define ASYNC_DNS_SERVER_STM32_VERSION      "AsyncDNSServer_STM32 v1.1.1"
 
 #include <AsyncUDP_STM32.h>
 #include "AsyncDNSServer_Debug_STM32.h"
