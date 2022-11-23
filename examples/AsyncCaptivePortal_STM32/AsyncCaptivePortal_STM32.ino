@@ -2,9 +2,9 @@
   AsyncCaptivePortal_STM32.ino
 
   For STM32 with LAN8720 (STM32F4/F7)or built-in LAN8742A Ethernet (Nucleo-144, DISCOVERY, etc)
-  
+
   AsyncDNSServer_STM32 is a Async DNS Server library for the STM32 using built-in LAN8742A Ethernet
-  
+
   Based on and modified from ESPAsyncDNSServer Library (https://github.com/devyte/ESPAsyncDNSServer)
   Built by Khoi Hoang https://github.com/khoih-prog/AsyncDNSServer_STM32
   Licensed under MIT license
@@ -33,9 +33,10 @@ void handleNotFound(AsyncWebServerRequest *request)
   request->send(200, "text/html", responseHTML);
 }
 
-void setup() 
+void setup()
 {
   Serial.begin(115200);
+
   while (!Serial);
 
   delay(1000);
@@ -69,13 +70,13 @@ void setup()
   dnsServer.start(DNS_PORT, "*", apIP);
 
   server.onNotFound(handleNotFound);
-  
+
   server.begin();
-  
+
   Serial.print(F("HTTP DNSServer is @ IP : "));
   Serial.println(apIP);
 }
 
-void loop() 
+void loop()
 {
 }

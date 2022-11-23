@@ -1,16 +1,16 @@
 /****************************************************************************************************************************
   AsyncDNSServer_STM32.h - Dead simple AsyncWebServer for STM32 built-in LAN8742A Ethernet
-  
+
   For STM32 with LAN8720 (STM32F4/F7)or built-in LAN8742A Ethernet (Nucleo-144, DISCOVERY, etc)
-  
+
   AsyncDNSServer_STM32 is a Async DNS Server library for the STM32 using built-in LAN8742A Ethernet
-  
+
   Based on and modified from ESPAsyncDNSServer Library (https://github.com/devyte/ESPAsyncDNSServer)
   Built by Khoi Hoang https://github.com/khoih-prog/AsyncDNSServer_STM32
   Licensed under MIT license
-  
+
   Version: 1.1.1
-  
+
   Version Modified By   Date      Comments
   ------- -----------  ---------- -----------
   1.0.0   K Hoang      08/09/2020 Initial coding for STM32 for built-in Ethernet (Nucleo-144, DISCOVERY, etc).
@@ -19,7 +19,7 @@
   *****************************************************************************************************************************/
 
 #pragma once
-  
+
 #ifndef AsyncDNSServer_STM32_h
 #define AsyncDNSServer_STM32_h
 
@@ -54,8 +54,8 @@ class AsyncDNSServer
 
     // Returns true if successful, false if there are no sockets available
     bool start(const uint16_t port,
-              const String &domainName,
-              const IPAddress &resolvedIP);
+               const String &domainName,
+               const IPAddress &resolvedIP);
     // stops the DNS server
     void stop();
 

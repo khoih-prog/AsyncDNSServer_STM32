@@ -2,9 +2,9 @@
   AsyncDNSServer.ino
 
   For STM32 with LAN8720 (STM32F4/F7)or built-in LAN8742A Ethernet (Nucleo-144, DISCOVERY, etc)
-  
+
   AsyncDNSServer_STM32 is a Async DNS Server library for the STM32 using built-in LAN8742A Ethernet
-  
+
   Based on and modified from ESPAsyncDNSServer Library (https://github.com/devyte/ESPAsyncDNSServer)
   Built by Khoi Hoang https://github.com/khoih-prog/AsyncDNSServer_STM32
   Licensed under MIT license
@@ -36,6 +36,7 @@ void handleNotFound(AsyncWebServerRequest *request)
 void setup()
 {
   Serial.begin(115200);
+
   while (!Serial);
 
   delay(1000);
@@ -58,7 +59,7 @@ void setup()
   // modify TTL associated  with the domain name (in seconds)
   // default is 60 seconds
   dnsServer.setTTL(300);
-  // set which return code will be used for all other domains 
+  // set which return code will be used for all other domains
   // (e.g. sending ServerFailure instead of NonExistentDomain will reduce number of queries
   // sent by clients). Default is AsyncDNSReplyCode::NonExistentDomain
   dnsServer.setErrorReplyCode(AsyncDNSReplyCode::ServerFailure);
@@ -74,6 +75,6 @@ void setup()
   Serial.println(apIP);
 }
 
-void loop() 
+void loop()
 {
 }

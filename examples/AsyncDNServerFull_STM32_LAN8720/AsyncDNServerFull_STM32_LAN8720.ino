@@ -2,9 +2,9 @@
   AsyncDNSServerFull_LAN8720.ino
 
   For STM32 with LAN8720 (STM32F4/F7)or built-in LAN8742A Ethernet (Nucleo-144, DISCOVERY, etc)
-  
+
   AsyncDNSServer_STM32 is a Async DNS Server library for the STM32 using built-in LAN8742A Ethernet
-  
+
   Based on and modified from ESPAsyncDNSServer Library (https://github.com/devyte/ESPAsyncDNSServer)
   Built by Khoi Hoang https://github.com/khoih-prog/AsyncDNSServer_STM32
   Licensed under MIT license
@@ -36,7 +36,7 @@ void setup()
 {
   Serial.begin(115200);
   delay(2000);
-  
+
   Serial.print("\nStart AsyncDNSServerFull_STM32_LAN8720 on ");
   Serial.println(BOARD_NAME);
   Serial.println(ASYNC_DNS_SERVER_STM32_VERSION);
@@ -65,19 +65,19 @@ void setup()
   dnsServer.start(DNS_PORT, "*", apIP);
 
   // simple HTTP server to see that DNS server is working
-  server.on("/", HTTP_GET, [](AsyncWebServerRequest * request) 
+  server.on("/", HTTP_GET, [](AsyncWebServerRequest * request)
   {
     request->send(200, "text/plain", "Hello from LAN8720 DNSServer running on " + String(BOARD_NAME));
   });
 
   server.onNotFound(handleNotFound);
-  
+
   server.begin();
-  
+
   Serial.print(F("HTTP DNSServer is @ IP : "));
   Serial.println(apIP);
 }
 
-void loop() 
+void loop()
 {
 }
